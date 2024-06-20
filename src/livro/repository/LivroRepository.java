@@ -1,14 +1,16 @@
 package livro.repository;
 
-import livros.model.Livro;
+import java.util.ArrayList;
+
+import livro.model.Livro;
 
 public interface LivroRepository {
 
-		public void procurarPorId(int numero);
-		public void listarTodos();
+		public Livro procurarPorId(int numero);
+		public ArrayList<Livro> listarTodos();
 		public void cadastrar(Livro livro);
 		public void atualizar(Livro livro);
-		public void deletar(int numero);
+		public void deletar(Livro livro);
 		public void vender(Livro livro);
 }
 

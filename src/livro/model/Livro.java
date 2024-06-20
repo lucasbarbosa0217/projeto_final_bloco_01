@@ -1,11 +1,11 @@
-package livros.model;
+package livro.model;
 
 public abstract class Livro {
 	private int idLivro;
 	private String nomeLivro;
 	private String nomeAutore;
-	private String nomeTradutore;
-	private String nomeIlustradore;
+	private String nomeTradutore = "";
+	private String nomeIlustradore = "";
 	private int estoque;
 
 	public Livro(int idLivro, String nomeLivro, String nomeAutore, String nomeTradutore, String nomeIlustradore,
@@ -96,7 +96,7 @@ public abstract class Livro {
 	public String toString() {
 		return "Livro [idLivro=" + idLivro + ", nomeLivro=" + nomeLivro + ", nomeAutore=" + nomeAutore
 				+ ", nomeTradutore=" + nomeTradutore + ", nomeIlustradore=" + nomeIlustradore + ", estoque=" + estoque
-				+ "]";
+				+ ", ";
 	}
 
 }

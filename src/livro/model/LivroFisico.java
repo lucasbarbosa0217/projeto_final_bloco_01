@@ -1,6 +1,8 @@
-package livros.model;
+package livro.model;
 
 public class LivroFisico extends Livro {
+
+	
 
 	private Capa tipoCapa;
 	private int qtdPaginas;
@@ -13,9 +15,9 @@ public class LivroFisico extends Livro {
 	}
 
 	// Sem ilustradore e tradutore
-	public LivroFisico(int idLivro, String nomeLivro, String nomeIlustradore, int estoque, Capa tipoCapa,
+	public LivroFisico(int idLivro, String nomeLivro, String nomeAutore, int estoque, Capa tipoCapa,
 			int qtdPaginas) {
-		super(idLivro, nomeLivro, nomeIlustradore, estoque);
+		super(idLivro, nomeLivro, nomeAutore, estoque);
 		this.tipoCapa = tipoCapa;
 		this.qtdPaginas = qtdPaginas;
 	}
@@ -50,6 +52,12 @@ public class LivroFisico extends Livro {
 
 	public void setQtdPaginas(int qtdPaginas) {
 		this.qtdPaginas = qtdPaginas;
+	}
+	
+	@Override
+	public String toString() {
+		String retorno = super.toString();
+		return  retorno + "tipoCapa=" + tipoCapa + ", qtdPaginas=" + qtdPaginas + "]";
 	}
 
 }

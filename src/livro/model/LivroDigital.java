@@ -1,4 +1,4 @@
-package livros.model;
+package livro.model;
 
 public class LivroDigital extends Livro{
 
@@ -26,6 +26,13 @@ public class LivroDigital extends Livro{
 		this.setTipoArquivo(tipoArquivo);
 	}
 	
+	@Override
+	public String toString() {
+		String retorno = super.toString();
+		return retorno + "tipoArquivo=" + tipoArquivo + "]";
+	}
+
+
 	//Sem Ilustradore
 	public LivroDigital(int idLivro, String nomeLivro, String nomeAutore, 
 			int estoque, String nomeTradutore, Arquivo tipoArquivo) {
