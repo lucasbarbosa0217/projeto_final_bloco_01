@@ -70,7 +70,8 @@ public class LivroController implements LivroRepository {
 		return true;
 	}
 	
-	public boolean idExite (int id) {
+	@Override
+	public boolean idExiste (int id) {
 		return listaLivros.containsKey(id);
 	}
 
@@ -80,8 +81,8 @@ public class LivroController implements LivroRepository {
 		return ++numero;
 	}
 	
-	
-	public List<Livro> buscarLivroNome(String pesquisa){
+	@Override
+	public List<Livro> procurarPorNome(String pesquisa){
 		List<Livro> resultado = new ArrayList<>();
 		
 
@@ -94,5 +95,7 @@ public class LivroController implements LivroRepository {
         
 		return resultado;
 	}
+
+	
 
 }

@@ -74,7 +74,7 @@ public class Menu {
 		System.out.println("Digite sua pesquisa:");
 		String termoPesquisa = scanner.nextLine();
 
-		List<Livro> resultado = livroController.buscarLivroNome(termoPesquisa);
+		List<Livro> resultado = livroController.procurarPorNome(termoPesquisa);
 
 		if (resultado.isEmpty()) {
 			System.out.println("Pesquisa não teve resultados.");
@@ -131,7 +131,7 @@ public class Menu {
 			if (idLivro == 0) {
 				return;
 			}
-		} while (livroController.idExite(idLivro) == false);
+		} while (livroController.idExiste(idLivro) == false);
 
 		if (idLivro == 0) {
 			System.out.println("Cancelando operação");
@@ -158,7 +158,7 @@ public class Menu {
 				return;
 			}
 
-		} while (livroController.idExite(idLivro) == false);
+		} while (livroController.idExiste(idLivro) == false);
 
 		if (idLivro == 0) {
 			System.out.println("Cancelando operação");
@@ -311,7 +311,7 @@ public class Menu {
 			if (idLivro == 0) {
 				return;
 			}
-		} while (livroController.idExite(idLivro) == false);
+		} while (livroController.idExiste(idLivro) == false);
 
 		if (idLivro == 0) {
 			System.out.println("Cancelando operação");
