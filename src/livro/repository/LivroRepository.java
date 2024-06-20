@@ -11,6 +11,5 @@ public interface LivroRepository {
 		public void cadastrar(Livro livro);
 		public void atualizar(Livro livro);
 		public void deletar(Livro livro);
-		public void vender(Livro livro);
 }
 

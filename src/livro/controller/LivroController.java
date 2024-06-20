@@ -2,6 +2,7 @@ package livro.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 import livro.model.Livro;
@@ -24,8 +25,16 @@ public class LivroController implements LivroRepository {
 
 	@Override
 	public void cadastrar(Livro livro) {
-		listaLivros.put(livro.getIdLivro(), livro);
-		System.out.printf("\nLivro %s cadastrado com sucesso", livro.getNomeLivro());
+		
+		Optional<Livro> livroOp = Optional.ofNullable(livro);
+		
+		if(livroOp.isEmpty()) {
+			System.out.println("Erro ao adicionar livro");
+		}else {
+			listaLivros.put(livro.getIdLivro(), livro);
+			System.out.printf("\nLivro %s cadastrado com sucesso", livro.getNomeLivro());
+		}
+		
 	}
 
 	@Override
@@ -65,14 +74,25 @@ public class LivroController implements LivroRepository {
 		return listaLivros.containsKey(id);
 	}
 
-	@Override
-	public void vender(Livro livro) {
-		// TODO parte do código a ser implementado na parte de Features.
-		
-	}
+
 	
 	public int numeroControle() {
 		return ++numero;
+	}
+	
+	
+	public List<Livro> buscarLivroNome(String pesquisa){
+		List<Livro> resultado = new ArrayList<>();
+		
+
+        for (Livro livro : listaLivros.values()) {
+            if (livro.getNomeLivro().toLowerCase().contains(pesquisa.toLowerCase())) {
+                resultado.add(livro);
+            }
+        }
+        
+        
+		return resultado;
 	}
 
 }

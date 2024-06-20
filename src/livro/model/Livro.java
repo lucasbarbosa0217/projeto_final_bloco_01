@@ -98,5 +98,13 @@ public abstract class Livro {
 				+ ", nomeTradutore=" + nomeTradutore + ", nomeIlustradore=" + nomeIlustradore + ", estoque=" + estoque
 				+ ", ";
 	}
+	
+	public void vender() throws Exception {
+		if(this.estoque > 0) {
+			this.estoque--;
+		}else {
+			throw new Exception("Livro sem estoque!");
+		}
+	}
 
 }
