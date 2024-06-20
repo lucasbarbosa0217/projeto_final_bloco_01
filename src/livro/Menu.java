@@ -79,7 +79,6 @@ public class Menu {
 		System.out.println("\nAtualizar um livro do estoque.");
 	}
 
-	
 	private static void apagarLivro() {
 		System.out.println("\nApagar um livro do estoque.");
 	}
